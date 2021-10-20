@@ -20,3 +20,6 @@ Route::get('/bingo', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('login/{driver}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
